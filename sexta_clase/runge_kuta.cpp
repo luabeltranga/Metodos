@@ -14,7 +14,7 @@ int main (void){
   double xm=1;
   double err = 0;
   for(int ii = 0; ii<=N_MAX; ii++){
-    xr=xu-(f(xu)*(xl-xu))/(f(xl)-f(xu));
+    xr=xu-(f(xu)*(xl-xu))/(f(xl)-f(xu))c;
     if(std::fabs(f(xr))<eps){
       break;
     }
