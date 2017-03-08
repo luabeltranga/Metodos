@@ -10,7 +10,7 @@ double fixedpoint(double x0,int N_MAX, double eps);
 int main (void){
   // bisection(14,15,30,1.0e-7);
   //regulafalsi(0,1,30,1.0e-7);
-  fixedpoint(14,30,1.0e-19);
+  fixedpoint(0.5,300,1.0e-19);
   return 0;
 }
 
@@ -70,8 +70,8 @@ double fixedpoint(double x0,int N_MAX, double eps){
       break;
     }
     else{
-      xi=std::exp(-x0);
+      xi=std::exp(-xi);
     }
-      std::printf("%.16e  \n",xi);
+    std::printf("%d  %20.16e %20.16e \n",jj,xi,xi-std::exp(-xi));
     }
   }
