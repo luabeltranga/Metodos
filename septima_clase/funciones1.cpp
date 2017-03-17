@@ -17,3 +17,4 @@ double seno (double x){
   std::cout<<"&x en seno: "<<&x<<std::endl;
   return x-x*x*x/6.0;
 }
+
