@@ -14,7 +14,7 @@ void data_x(void);
 
 int main(void){ 
 
-  data_x();
+  data_h();
 
   return 0;
 }
@@ -42,16 +42,16 @@ double central_dev2(double x, double h){
 
 double richardson_dev(double x, double h){
   double f1, f2;
-  f1=central_dev2(x,h);
-  f2=central_dev2(x,h/2);
-  return (4*f2-f1)/3.0;
+  f1=central_dev(x,h);
+  f2=central_dev(x,h/2);
+  return (4.0*f2-f1)/3.0;
 }
 
 
 double richardson_dev2(double x, double h){
   double f1, f2;
-  f1=central_dev(x,h);
-  f2=central_dev(x,h/2);
+  f1=central_dev2(x,h);
+  f2=central_dev2(x,h/2);
   return (4*f2-f1)/3.0;
 }
 void data_h(void){
