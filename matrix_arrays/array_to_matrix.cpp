@@ -22,8 +22,17 @@ int main (void){
     }
     
   }
-  
-  std::cout<<x[14]<<std::endl;
-  std::cout<<M[2][4]<<std::endl;
+   for (int m = 0;m<15;m++){
+      std::cout<<x[m]<<std::endl;
+  } 
+      std::cout<<" "<<std::endl;
+ 
+   for(int n = 0;n<3;n++){
+    for (int m = 0;m<5;m++){
+      std::cout<<M[n][m]<<std::endl;
+    }
+    
+  }
+
   return 0;
 }
