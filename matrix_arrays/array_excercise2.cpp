@@ -9,7 +9,7 @@ int main(void){
   return 0;
 }
 
-void statistics(const double data[],int size){
+void statistics(const double *data,int size){
   double sum=0 ;
   for (int ii = 0; ii<size;ii++){
     sum+=data[ii];
