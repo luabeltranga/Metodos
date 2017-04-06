@@ -1,29 +1,34 @@
 #include <iostream>
 #include <cmath>
 #include <functional>
+#include <array>
 
+double integral(std::function<double(double)> f, int n);
 
-double integral(std::function<double(double)> f, double x, double h);
 
 double my_sin(double x);
 
 int main (void){
-  double x= M_PI/4;
-  double h=0.01;
   
-  std::cout<<integral(my_sin,x,h)<<std::endl;
+  std::cout<<integral(my_sin,5)<<std::endl;
 
   return 0;
 }
 
-double integral(std::function<double(double)> f, double x, double h){
+double integral(std::function<double(double)> f,int n){
+  std::array<double,10> x;
+  std::array<double,10> F;
+  
   double inta = 0;
-  double hh = 1.0;
-  for(int ii = 0;ii<2*M_PI;ii+=1.0){
-    inta+=(f(ii+1.0))/(hh);
+  
+  
+
+  for(int ii = 0;ii<n;ii++){
+    F[ii]=f(ii);
+    x[ii]=2*M_PI/ii;
   }
 
-  return inta;
+  return 3;
 }
 
 double my_sin(double x){
