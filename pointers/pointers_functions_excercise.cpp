@@ -2,36 +2,43 @@
 #include <cmath>
 #include <functional>
 #include <array>
-
-double integral(std::function<double(double)> f, int n);
-
-
-double my_sin(double x);
+const int N = 100;
+void integral(std::function<double(double)> f, double &low,double &up);
+double my_fun(double x);
 
 int main (void){
+  double up = 2*M_PI; // limite superior de integracion
+  double low = 0; // limite inferior de  integracion, que se sobreescribe con
+                  // con la integral 
   
-  std::cout<<integral(my_sin,5)<<std::endl;
+  integral(my_fun,low,up); // llamado de la funcion integral
+
+  std::cout<<low<<std::endl; // impresion de la respuesta
 
   return 0;
 }
 
-double integral(std::function<double(double)> f,int n){
-  std::array<double,10> x;
-  std::array<double,10> F;
-  
-  double inta = 0;
-  
-  
+void integral(std::function<double(double)> f, double &low, double &up){
+  std::array<double,N> x; //arreglo para guardar las particiones del intervalo
+  std::array<double,N> F; //arreglo para guardar los valor de f
+  up = (up-low)/(N-1);
+  low = 0;
 
-  for(int ii = 0;ii<n;ii++){
-    F[ii]=f(ii);
-    x[ii]=2*M_PI/ii;
+  //llenado de los arreglos
+  for(int ii = 0;ii<N;ii++){  
+    F[ii]=f(up*ii);
+    x[ii]=up*ii;
+  }
+  //calculo de la integral
+  for(int ii = 0;ii<N-1;ii++){
+    low+=F[ii+1]*(x[ii+1]-x[ii]);
   }
 
-  return 3;
+
 }
 
-double my_sin(double x){
+//funcion a integrar
+double my_fun(double x){
   // return std::sin(x);
   return 1;
 }
