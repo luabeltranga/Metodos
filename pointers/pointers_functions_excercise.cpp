@@ -7,7 +7,7 @@ void integral(std::function<double(double)> f, double &low,double &up);
 double my_fun(double x);
 
 int main (void){
-  double up = 2*M_PI; // limite superior de integracion
+  double up = 1; // limite superior de integracion
   double low = 0; // limite inferior de  integracion, que se sobreescribe con
                   // con la integral 
   
@@ -39,6 +39,6 @@ void integral(std::function<double(double)> f, double &low, double &up){
 
 //funcion a integrar
 double my_fun(double x){
-  // return std::sin(x);
-  return 1;
+  //return std::cos(x);
+  return x;
 }

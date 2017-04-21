@@ -2,7 +2,9 @@
 
 int main()
 {
+  double y = 0;
   std::cout<<"Hola mundo"<<std::endl;
+  std::cout<<sizeof(y)<<std::endl;
   std::cerr<<"Error"<<std::endl;
   
 
