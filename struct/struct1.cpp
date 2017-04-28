@@ -9,7 +9,7 @@ complex sum (const complex &a,const complex &b);
 void print (const complex &c);
 int main(void){
   std::mt19937 g(2); 
-  std::uniform_real_distribution<double> h(0,10);
+  std::uniform_real_distribution<double> h(0,1);
   complex a ,b , c ;
   a.re = h(g);
   a.im = h(g);
