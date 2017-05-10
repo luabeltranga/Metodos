@@ -1,86 +1,216 @@
 
 
 *******************************************************************************
-Fri May  5 20:37:10 2017
+Tue May  9 17:50:08 2017
 
 
-FIT:    data read from 'data.dat'
+FIT:    data read from 'Oscilador_amortiguado.dat'
         format = z
-        #datapoints = 100
+        #datapoints = 10000
         residuals are weighted equally (unit weight)
 
 function used for fitting: f(x)
-	f(x) = a*exp(b*x)
+	f(x) = a*exp(-b*x)
 fitted parameters initialized with current variable values
 
 iter      chisq       delta/lim  lambda   a             b            
-   0 2.1912589371e+09   0.00e+00  3.16e+04    1.000000e+00   1.000000e+00
-  13 7.9642195986e-11  -1.35e-04  3.16e-06    1.234500e+00  -2.350611e-01
+   0 5.1918393496e+04   0.00e+00  1.94e-01    1.000000e+00   1.000000e+00
+  11 5.3427489464e+02  -5.91e-04  1.94e-05    1.179660e+01   1.123459e+00
 
-After 13 iterations the fit converged.
-final sum of squares of residuals : 7.96422e-11
-rel. change during last iteration : -1.35097e-09
+After 11 iterations the fit converged.
+final sum of squares of residuals : 534.275
+rel. change during last iteration : -5.9129e-09
 
-degrees of freedom    (FIT_NDF)                        : 98
-rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 9.01485e-07
-variance of residuals (reduced chisquare) = WSSR/ndf   : 8.12675e-13
+degrees of freedom    (FIT_NDF)                        : 9998
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.231167
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0534382
 
 Final set of parameters            Asymptotic Standard Error
 =======================            ==========================
-a               = 1.2345           +/- 2.81e-07     (2.276e-05%)
-b               = -0.235061        +/- 8.294e-08    (3.528e-05%)
+a               = 11.7966          +/- 0.01548      (0.1312%)
+b               = 1.12346          +/- 0.002088     (0.1859%)
 
 correlation matrix of the fit parameters:
                 a      b      
 a               1.000 
-b              -0.723  1.000 
+b               0.707  1.000 
 
 
 *******************************************************************************
-Fri May  5 20:47:48 2017
+Tue May  9 17:50:34 2017
 
 
-FIT:    data read from 'data.dat'
+FIT:    data read from 'Oscilador_amortiguado.dat'
         format = z
-        #datapoints = 1000
+        #datapoints = 10000
         residuals are weighted equally (unit weight)
 
 function used for fitting: f(x)
+	f(x) = a*exp(-b*x)*cos(c*x)
 fitted parameters initialized with current variable values
 
 
 
 *******************************************************************************
-Fri May  5 20:47:54 2017
+Tue May  9 17:50:37 2017
 
 
-FIT:    data read from 'data.dat'
+FIT:    data read from 'Oscilador_amortiguado.dat'
         format = z
-        #datapoints = 1000
+        #datapoints = 10000
         residuals are weighted equally (unit weight)
 
 function used for fitting: f(x)
-	f(x) = a*exp(b*x)
+	f(x) = a*exp(-b*x)*cos(c*x)
 fitted parameters initialized with current variable values
 
-iter      chisq       delta/lim  lambda   a             b            
-   0 3.2637234640e+87   0.00e+00  1.34e+44    1.000000e+00   1.000000e+00
-   1 4.8758594107e+86  -5.69e+05  1.34e+43    9.999035e-01   9.904422e-01
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 6.5045733274e+03   0.00e+00  1.58e+00    1.179660e+01   1.123459e+00   1.000000e+00
+   6 2.0732194800e+02  -2.09e-01  1.58e-04    1.122747e+01   8.984863e-01   4.837311e-01
 
-The maximum lambda = 1.000000e+20 was exceeded. Fit stopped.
-final sum of squares of residuals : 4.87586e+86
-rel. change during last iteration : -5.69364
+After 6 iterations the fit converged.
+final sum of squares of residuals : 207.322
+rel. change during last iteration : -2.085e-06
 
-degrees of freedom    (FIT_NDF)                        : 998
-rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 6.98973e+41
-variance of residuals (reduced chisquare) = WSSR/ndf   : 4.88563e+83
+degrees of freedom    (FIT_NDF)                        : 9997
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.144008
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0207384
 
 Final set of parameters            Asymptotic Standard Error
 =======================            ==========================
-a               = 0.999904         +/- 5.95         (595.1%)
-b               = 0.990442         +/- 0.05694      (5.749%)
+a               = 11.2275          +/- 0.009995     (0.08902%)
+b               = 0.898486         +/- 0.001871     (0.2083%)
+c               = 0.483731         +/- 0.001441     (0.2979%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.721  1.000 
+c              -0.295 -0.664  1.000 
+
+
+*******************************************************************************
+Tue May  9 17:52:43 2017
+
+
+FIT:    data read from 'Oscilador_amortiguado.dat'
+        format = z
+        #datapoints = 10000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*exp(-b*x)*cos(c*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 6.1994600314e+04   0.00e+00  1.69e+00    1.122747e+01   8.984863e-01   4.837311e-01
+  10 2.5177222551e+02  -3.48e-01  1.69e-06    1.101553e+01   2.104443e+00   7.229635e+00
+
+After 10 iterations the fit converged.
+final sum of squares of residuals : 251.772
+rel. change during last iteration : -3.47601e-06
+
+degrees of freedom    (FIT_NDF)                        : 9997
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.158697
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0251848
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 11.0155          +/- 0.01824      (0.1656%)
+b               = 2.10444          +/- 0.005172     (0.2458%)
+c               = 7.22964          +/- 0.003907     (0.05404%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b               0.641  1.000 
+c               0.048  0.040  1.000 
+
+
+*******************************************************************************
+Tue May  9 17:54:41 2017
+
+
+FIT:    data read from 'Oscilador_amortiguado.dat'
+        format = z
+        #datapoints = 10000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*exp(-b*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 7.2583876235e+03   0.00e+00  1.20e+00    1.101553e+01   2.104443e+00   7.229635e+00
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Tue May  9 17:54:45 2017
+
+
+FIT:    data read from 'Oscilador_amortiguado.dat'
+        format = z
+        #datapoints = 10000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*exp(-b*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 2.8085754372e+03   0.00e+00  1.29e+00    1.330823e+01   3.992866e+00
+   2 2.8085421641e+03  -2.39e-02  1.29e-02    1.331545e+01   3.997232e+00
+
+After 2 iterations the fit converged.
+final sum of squares of residuals : 2808.54
+rel. change during last iteration : -2.39035e-07
+
+degrees of freedom    (FIT_NDF)                        : 9998
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.53001
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.28091
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 13.3154          +/- 0.06677      (0.5014%)
+b               = 3.99723          +/- 0.02842      (0.7111%)
 
 correlation matrix of the fit parameters:
                 a      b      
 a               1.000 
-b              -1.000  1.000 
+b               0.706  1.000 
+
+
+*******************************************************************************
+Tue May  9 17:56:42 2017
+
+
+FIT:    data read from 'Oscilador_amortiguado.dat'
+        format = z
+        #datapoints = 10000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x) = a*exp(-b*x)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 1.6903879771e+05   0.00e+00  1.29e+00    1.331545e+01   3.997232e+00
+   8 4.3874368514e+01  -2.26e-01  1.29e-02    1.057245e+01   2.629859e-01
+
+After 8 iterations the fit converged.
+final sum of squares of residuals : 43.8744
+rel. change during last iteration : -2.25552e-06
+
+degrees of freedom    (FIT_NDF)                        : 9998
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0662444
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00438831
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 10.5724          +/- 0.002211     (0.02091%)
+b               = 0.262986         +/- 8.202e-05    (0.03119%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b               0.725  1.000 
