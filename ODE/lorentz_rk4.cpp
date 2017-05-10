@@ -2,34 +2,29 @@
 #include <vector>
 #include <cstdlib>
 
-const double OMEGA = 0.2323;
+const double DELTA = 10.0;
+const double RHO = 28.0;
+const double BETA = 8.0/3.0;
 
 double f(const std::vector<double> & x, double t, const int index);
 void runge(std::vector<double> & x, double t, double h);
-
+void gnuplot_plot(std::vector<double> &x);
 int main(void)
 {
-  const double x0 = 1.2345;
-  const double h = 0.1;
-  const int N = 1000;
-
-  std::vector<double> x {x0, 0};
-  double t;
-  for(int step = 0; step < N; ++step){
-    t = 0.0 + step*h;
-    std::cout << t << "   " << x[0] << "  " << x[1] <<  std::endl;
-    runge(x, t, h);
-  }
+  std::vector<double> x {1, 1 , 1};
   
+  gnuplot_plot(x);
   
   return 0;
 }
 double f(const std::vector<double> & x, double t, const int index)
 {
   if (0 == index)
-    return x[1];
+    return DELTA*(x[1]-x[0]);
   else if (1 == index)
-    return -OMEGA*OMEGA*x[0];
+    return x[0]*(RHO-x[2])-x[1];
+  else if (2 == index)
+    return x[0]*x[1]-BETA*x[2];
   else {
     std::cerr << "Wrong index = " << index << std::endl;
     exit(1);
@@ -78,4 +73,18 @@ void runge(std::vector<double> & x, double t, double h)
   for (int ii = 0; ii < N; ++ii) {
     x[ii] = x[ii] +( k1[ii] + 2*k2[ii] +2*k3[ii] +  k4[ii])/6.0;
   }
+}
+
+
+void gnuplot_plot(std::vector<double> &x){
+  const double h = 0.01;
+  const int N = 10000;
+  //std::cout << "splot '-' w l" <<  std::endl;
+  double t;
+  for(int step = 0; step < N; ++step){
+    t = 0.0 + step*h;
+    std::cout << x[0] << "   " << x[1] << "  " << x[2] <<  std::endl;
+    runge(x, t, h);
+  }
+  //std::cout << "e " <<  std::endl;
 }

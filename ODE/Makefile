@@ -1,14 +1,19 @@
+CXX = g++
+CXXFLAGS = -std=c++11  -fsanitize=address -fsanitize=leak -fsanitize=undefined 
+
 Euler:
-	g++ -std=c++11  -fsanitize=address -fsanitize=leak -fsanitize=undefined  Euler.cpp
+	$(CXX) $(CXXFLAGS) Euler.cpp
 Euler2:
-	g++ -std=c++11  -fsanitize=address -fsanitize=leak -fsanitize=undefined  Euler2.cpp
+	 $(CXX) $(CXXFLAGS)  Euler2.cpp
 lorentz:
-	g++ -std=c++11 -fsanitize=address -fsanitize=leak -fsanitize=undefined  lorentz.cpp
+	 $(CXX) $(CXXFLAGS)  lorentz.cpp
+lorentz2:
+	 $(CXX) $(CXXFLAGS)  lorentz_rk4.cpp
 homework:
-	g++ -std=c++11 -fsanitize=address -fsanitize=leak -fsanitize=undefined  Euler_homework.cpp
+	 $(CXX) $(CXXFLAGS)  Euler_homework.cpp
 class1:
-	g++ -std=c++11 -fsanitize=address -fsanitize=leak -fsanitize=undefined euler-V2-vector.cpp
+	$(CXX) $(CXXFLAGS)  euler-V2-vector.cpp
 class2:
-	g++ -std=c++11 -fsanitize=address -fsanitize=leak -fsanitize=undefined runge_kutta.cpp
+	$(CXX) $(CXXFLAGS) runge_kutta.cpp
 clean:
 	rm -f  *.dat *.txt *.log *.out
