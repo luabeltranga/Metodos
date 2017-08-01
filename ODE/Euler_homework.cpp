@@ -3,7 +3,7 @@
 #include <fstream>
 #include <vector>
 
-const double OMEGA = 1.0;
+const double OMEGA = 10.0;
 const double GAMMA = 4.0;
 double f(double x ,double v, double t );
 void  euler(std::vector<double> &x, double t , double h);
